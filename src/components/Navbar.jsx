@@ -8,8 +8,8 @@ function NavItem({ to, children }) {
       to={to}
       className={({ isActive }) =>
         clsx(
-          'rounded-md px-3 py-2 text-sm font-medium',
-          isActive ? 'bg-slate-900 text-white' : 'text-slate-200 hover:bg-slate-900 hover:text-white'
+          'rounded-md px-3 py-2 text-sm font-medium transition-colors',
+          isActive ? 'bg-accent-500/15 text-accent-300' : 'text-slate-300 hover:text-white hover:bg-slate-900/50'
         )
       }
       end={to === '/'}
@@ -21,26 +21,26 @@ function NavItem({ to, children }) {
 
 export function Navbar({ displayName, phoneTel }) {
   return (
-    <header className="sticky top-0 z-40 border-b border-slate-800 bg-slate-950/90 backdrop-blur">
-      <div className="mx-auto flex w-full max-w-6xl items-center justify-between gap-3 px-4 py-3">
-        <Link to="/" className="font-semibold tracking-tight text-white">
+    <header className="sticky top-0 z-40 border-b border-slate-800/50 bg-slate-950/95 backdrop-blur-sm">
+      <div className="mx-auto flex w-full max-w-6xl items-center justify-between gap-4 px-4 py-4">
+        <Link to="/" className="font-semibold tracking-tight text-white text-base sm:text-lg">
           {displayName}
         </Link>
 
-        <nav className="hidden items-center gap-1 sm:flex" aria-label="Primary">
+        <nav className="hidden items-center gap-2 sm:flex" aria-label="Primary">
           <NavItem to="/">Home</NavItem>
           <NavItem to="/location">Location</NavItem>
           <NavItem to="/contact">Contact</NavItem>
         </nav>
 
         <div className="flex items-center gap-2">
-          <Button as="a" href={`tel:${phoneTel}`} variant="primary" className="px-3 py-2">
+          <Button as="a" href={`tel:${phoneTel}`} variant="primary" className="text-xs sm:text-sm px-3 py-2">
             Call
           </Button>
         </div>
       </div>
 
-      <nav className="border-t border-slate-800 sm:hidden" aria-label="Primary (mobile)">
+      <nav className="border-t border-slate-800/50 sm:hidden" aria-label="Primary (mobile)">
         <div className="mx-auto flex w-full max-w-6xl items-center justify-between gap-1 px-2 py-2">
           <NavItem to="/">Home</NavItem>
           <NavItem to="/location">Location</NavItem>

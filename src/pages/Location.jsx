@@ -11,7 +11,7 @@ export function LocationPage() {
     <div>
       <Section title="Location" subtitle={business.address}>
         <MapEmbed height={520} />
-        <div className="mt-4 flex flex-col gap-3 sm:flex-row">
+        <div className="mt-6 flex flex-col gap-3 sm:gap-4 sm:flex-row">
           <Button as="a" href={directionsUrl} target="_blank" rel="noreferrer" variant="secondary">
             Get Directions
           </Button>

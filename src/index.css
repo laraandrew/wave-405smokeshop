@@ -6,10 +6,26 @@
   color-scheme: dark;
 }
 
-/* Keep typography simple and readable */
+/* Improve readability with better line heights and typography */
 html,
 body {
   height: 100%;
+}
+
+body {
+  @apply leading-relaxed;
+}
+
+h1 {
+  @apply leading-tight;
+}
+
+h2 {
+  @apply leading-snug;
+}
+
+p {
+  @apply leading-relaxed;
 }
 
 

@@ -11,7 +11,7 @@ export const business = {
   description:
     'Local West LA smoke shop offering glass, vapes, CBD, and accessories with friendly service.',
   hours: {
-    mon: '9:00 AM – 10:00 PM',
+    mon: '9:00 AM to 10:00 PM',
     tue: '9:00 AM – 10:00 PM',
     wed: '9:00 AM – 10:00 PM',
     thu: '9:00 AM – 10:00 PM',
@@ -49,4 +49,12 @@ export function getTodaysHours(date = new Date()) {
 export function getGoogleMapsQuery(address = business.address) {
   return encodeURIComponent(address)
 }
+
+// Computed review/search links so the footer can link to Yelp and Google even
+// if explicit URLs are not provided. You can replace these with direct
+// business URLs if you have them (e.g. business.yelpUrl = 'https://...').
+// Use the explicit links provided by the owner for accuracy
+business.yelpUrl = 'https://www.yelp.com/biz/405-smoke-and-more-los-angeles'
+
+business.googleUrl = 'https://www.google.com/search?q=405+smoke+n+more+plus'
 

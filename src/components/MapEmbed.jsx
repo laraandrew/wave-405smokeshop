@@ -6,7 +6,7 @@ export function MapEmbed({ className, height = 360 }) {
   const src = `https://www.google.com/maps?q=${q}&output=embed`
 
   return (
-    <div className={clsx('overflow-hidden rounded-xl border border-slate-800 bg-slate-900', className)}>
+    <div className={clsx('overflow-hidden rounded-xl border border-slate-700/60 bg-slate-900 shadow-sm', className)}>
       <iframe
         title={`${business.displayName} Map`}
         src={src}

@@ -17,41 +17,64 @@ function HoursList() {
 
 export function Footer() {
   return (
-    <footer className="border-t border-slate-800 bg-slate-950">
-      <div className="mx-auto w-full max-w-6xl px-4 py-10">
-        <div className="grid gap-6 sm:grid-cols-3">
+    <footer className="border-t border-slate-800/50 bg-slate-950/50 backdrop-blur-sm">
+      <div className="mx-auto w-full max-w-6xl px-4 py-12 sm:py-16">
+        <div className="grid gap-8 sm:gap-10 sm:grid-cols-3">
           <div>
-            <p className="font-semibold text-white">{business.displayName}</p>
-            <p className="mt-2 text-sm text-slate-300">{business.address}</p>
-            <p className="mt-2 text-sm">
-              <a className="text-slate-200 underline decoration-slate-600 underline-offset-4 hover:text-white" href={`tel:${business.phoneTel}`}>
+            <p className="font-bold text-white text-lg">{business.displayName}</p>
+            <p className="mt-3 text-sm text-slate-400">{business.address}</p>
+            <p className="mt-3 text-sm">
+              <a className="text-slate-300 hover:text-white transition-colors underline decoration-slate-600/50 underline-offset-4" href={`tel:${business.phoneTel}`}>
                 {business.phoneDisplay}
               </a>
             </p>
           </div>
 
           <div>
-            <p className="font-semibold text-white">Hours</p>
-            <div className="mt-2">
+            <p className="font-bold text-white text-lg">Hours</p>
+            <div className="mt-3">
               <HoursList />
             </div>
           </div>
 
           <div>
-            <p className="font-semibold text-white">Instagram</p>
-            <p className="mt-2 text-sm text-slate-300">{business.instagramHandle}</p>
+            <p className="font-bold text-white text-lg">Instagram</p>
+            <p className="mt-3 text-sm text-slate-400">{business.instagramHandle}</p>
             <a
-              className="mt-2 inline-block text-sm text-slate-200 underline decoration-slate-600 underline-offset-4 hover:text-white"
+              className="mt-3 inline-block text-sm text-slate-300 hover:text-white transition-colors underline decoration-slate-600/50 underline-offset-4"
               href={business.instagramUrl}
               target="_blank"
               rel="noreferrer"
             >
               View on Instagram
             </a>
+
+            {/* Add review links for Google and Yelp */}
+            <div className="mt-4">
+              <p className="text-xs text-slate-400">Reviews</p>
+              <div className="mt-2 flex gap-3">
+                <a
+                  className="text-sm text-slate-300 hover:text-white transition-colors underline decoration-slate-600/50 underline-offset-4"
+                  href={business.googleUrl}
+                  target="_blank"
+                  rel="noreferrer"
+                >
+                  Google
+                </a>
+                <a
+                  className="text-sm text-slate-300 hover:text-white transition-colors underline decoration-slate-600/50 underline-offset-4"
+                  href={business.yelpUrl}
+                  target="_blank"
+                  rel="noreferrer"
+                >
+                  Yelp
+                </a>
+              </div>
+            </div>
           </div>
         </div>
 
-        <p className="mt-8 text-xs text-slate-500">
+        <p className="mt-10 text-xs text-slate-600 font-light">
           © {new Date().getFullYear()} {business.businessName}
         </p>
       </div>

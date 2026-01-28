@@ -2,9 +2,7 @@ import { Routes, Route, Navigate } from 'react-router-dom'
 import { business } from './data/business'
 import { Navbar } from './components/Navbar.jsx'
 import { Footer } from './components/Footer.jsx'
-import { HomePage } from './pages/Home.jsx'
-import { ContactPage } from './pages/Contact.jsx'
-import { LocationPage } from './pages/Location.jsx'
+import OnePage from './OnePage'
 
 export default function App() {
   return (
@@ -20,9 +18,9 @@ export default function App() {
 
       <main id="main" className="mx-auto w-full max-w-6xl px-4 pb-16 pt-8">
         <Routes>
-          <Route path="/" element={<HomePage />} />
-          <Route path="/contact" element={<ContactPage />} />
-          <Route path="/location" element={<LocationPage />} />
+          <Route path="/" element={<OnePage />} />
+          <Route path="/location" element={<OnePage />} />
+          <Route path="/contact" element={<OnePage />} />
           <Route path="*" element={<Navigate to="/" replace />} />
         </Routes>
       </main>

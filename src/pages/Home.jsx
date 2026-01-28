@@ -7,9 +7,9 @@ import { MapEmbed } from '../components/MapEmbed'
 function HoursRow() {
   const today = getTodaysHours()
   return (
-    <p className="mt-2 text-sm text-slate-300">
-      <span className="text-slate-400">Today:</span>{' '}
-      <span className="text-slate-100">
+    <p className="mt-3 text-sm sm:text-base text-slate-300">
+      <span className="text-slate-400 font-light">Today:</span>{' '}
+      <span className="text-slate-100 font-medium">
         {today.label} {today.value}
       </span>
     </p>
@@ -23,19 +23,19 @@ export function HomePage() {
   return (
     <div>
       {/* Hero */}
-      <section className="rounded-2xl border border-slate-800 bg-gradient-to-b from-slate-900 to-slate-950 px-6 py-10 sm:px-10">
-        <p className="text-sm font-medium text-accent-200">{business.locationArea}</p>
-        <h1 className="mt-2 text-3xl font-semibold tracking-tight text-white sm:text-4xl">
-          West LA Smoke Shop
+      <section className="rounded-2xl border border-slate-700/50 bg-gradient-to-br from-slate-900/80 to-slate-950 px-6 py-12 sm:px-10 sm:py-16 shadow-lg">
+        <p className="text-xs sm:text-sm font-semibold text-accent-300 uppercase tracking-wide">{business.locationArea}</p>
+        <h1 className="mt-3 text-4xl sm:text-5xl font-bold tracking-tight text-white max-w-3xl">
+          405 Smoke & More
         </h1>
-        <p className="mt-3 text-base text-slate-200">Glass • CBD • Vapes • Accessories</p>
+        <p className="mt-4 text-base sm:text-lg text-slate-300 font-light">Glass • CBD • Vapes • Accessories</p>
 
-        <div className="mt-6 rounded-xl border border-slate-800 bg-slate-950/50 p-4">
-          <p className="text-sm text-slate-200">{business.address}</p>
+        <div className="mt-8 rounded-lg border border-slate-700/60 bg-slate-900/40 p-5 sm:p-6 backdrop-blur-sm">
+          <p className="text-sm sm:text-base text-slate-200 font-medium">{business.address}</p>
           <HoursRow />
         </div>
 
-        <div className="mt-6 flex flex-col gap-3 sm:flex-row">
+        <div className="mt-8 flex flex-col gap-3 sm:gap-4 sm:flex-row">
           <Button as="a" href={`tel:${business.phoneTel}`} variant="primary">
             Call Now
           </Button>
@@ -55,22 +55,22 @@ export function HomePage() {
 
       {/* Why Choose Us */}
       <Section title="Why Choose Us">
-        <div className="grid gap-3 sm:grid-cols-3">
-          <div className="rounded-xl border border-slate-800 bg-slate-900 p-5">
-            <p className="font-medium text-white">Friendly staff</p>
-            <p className="mt-2 text-sm text-slate-300">
+        <div className="grid gap-4 sm:gap-6 sm:grid-cols-3">
+          <div className="rounded-xl border border-slate-700/60 bg-slate-900/50 p-6 sm:p-7 hover:bg-slate-900/70 transition-colors duration-300">
+            <p className="font-semibold text-white text-lg">Friendly staff</p>
+            <p className="mt-3 text-sm sm:text-base text-slate-300 leading-relaxed">
               Helpful service from people who know the products.
             </p>
           </div>
-          <div className="rounded-xl border border-slate-800 bg-slate-900 p-5">
-            <p className="font-medium text-white">Wide selection</p>
-            <p className="mt-2 text-sm text-slate-300">
+          <div className="rounded-xl border border-slate-700/60 bg-slate-900/50 p-6 sm:p-7 hover:bg-slate-900/70 transition-colors duration-300">
+            <p className="font-semibold text-white text-lg">Wide selection</p>
+            <p className="mt-3 text-sm sm:text-base text-slate-300 leading-relaxed">
               Glass, vapes, CBD, and accessories for everyday needs.
             </p>
           </div>
-          <div className="rounded-xl border border-slate-800 bg-slate-900 p-5">
-            <p className="font-medium text-white">Convenient National Blvd location</p>
-            <p className="mt-2 text-sm text-slate-300">
+          <div className="rounded-xl border border-slate-700/60 bg-slate-900/50 p-6 sm:p-7 hover:bg-slate-900/70 transition-colors duration-300">
+            <p className="font-semibold text-white text-lg">Convenient National Blvd location</p>
+            <p className="mt-3 text-sm sm:text-base text-slate-300 leading-relaxed">
               Easy to reach in West LA with quick directions.
             </p>
           </div>
@@ -80,7 +80,7 @@ export function HomePage() {
       {/* Map */}
       <Section title="Find Us" subtitle={business.address}>
         <MapEmbed />
-        <div className="mt-4">
+        <div className="mt-6">
           <Button as="a" href={directionsUrl} target="_blank" rel="noreferrer" variant="secondary">
             Directions
           </Button>
