@@ -1,0 +1,15 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  color-scheme: dark;
+}
+
+/* Keep typography simple and readable */
+html,
+body {
+  height: 100%;
+}
+
+
